@@ -1,0 +1,85 @@
+{
+  "name": "torrent-files-library-cli",
+  "version": "0.0.0-development",
+  "description": "the console line tool of torrent-files-library",
+  "files": [
+    "lib/"
+  ],
+  "preferGlobal": true,
+  "bin": {
+    "tfl-cli": "lib/index.js"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "compile": "babel -d lib/ src/ --source-maps both",
+    "prepare": "npm run compile",
+    "lint": "./node_modules/.bin/eslint ./src ./test --fix"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=5"
+  },
+  "keywords": [
+    "torrent",
+    "library",
+    "parser",
+    "torrent file",
+    "torrent files",
+    "parse torrent",
+    "parse torrent file",
+    "parse torrent files",
+    "parse torrent name",
+    "torrent library"
+  ],
+  "release": {
+    "analyzeCommits": {
+      "path": "sr-commit-analyzer",
+      "preset": "eslint",
+      "releaseRules": [
+        {
+          "tag": "Feat",
+          "release": "minor"
+        },
+        {
+          "tag": "Refactor",
+          "release": "patch"
+        },
+        {
+          "tag": "Fix",
+          "release": "patch"
+        },
+        {
+          "tag": "Perf",
+          "release": "patch"
+        },
+        {
+          "tag": "Breaking",
+          "release": "major"
+        }
+      ]
+    },
+    "generateNotes": {
+      "path": "sr-release-notes-generator",
+      "preset": "eslint"
+    }
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-register": "^6.26.0",
+    "conventional-changelog-eslint": "^0.2.0",
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "semantic-release": "^8.0.0",
+    "sr-commit-analyzer": "^2.0.2",
+    "sr-release-notes-generator": "^1.1.2"
+  },
+  "author": "jy95",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0"
+  }
+}
