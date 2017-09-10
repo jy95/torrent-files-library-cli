@@ -7,7 +7,7 @@
   ],
   "preferGlobal": true,
   "bin": {
-    "tfl-cli": "lib/index.js"
+    "tfl-cli": "lib/main.js"
   },
   "scripts": {
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
@@ -79,7 +79,7 @@
   "author": "jy95",
   "license": "MIT",
   "dependencies": {
-    "chalk": "^2.1.0",
-    "commander": "^2.11.0"
+    "terminal-kit": "^1.13.11",
+    "torrent-files-library": "^1.2.0"
   }
 }
