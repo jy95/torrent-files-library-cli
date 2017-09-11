@@ -1,23 +1,10 @@
 #!/usr/bin/env node
 
-// Module dependencies.
-import TorrentLibrary from 'torrent-files-library';
-
 // console import
 import chalk from 'chalk';
-import figlet from 'figlet';
-import clear from 'clear-terminal';
-
-import eventHandler from './components/eventHandler';
-import menu from './components/menu';
+import { rebuildWithFile, defaultCommand } from './commands';
 
 const { log } = console;
-
-// lib instance
-let libInstance = new TorrentLibrary();
-
-// handle events provided by libInstance
-eventHandler(libInstance);
 
 // for exits
 process.on('SIGINT', () => {
@@ -30,10 +17,9 @@ process.on('uncaughtException', (err) => {
   process.exit();
 });
 
-clear();
-log(chalk.yellow(figlet.textSync(
-  'TFL',
-  { horizontalLayout: 'full' },
-)));
-menu(libInstance);
+require('yargs') // eslint-disable-line
+  .command(rebuildWithFile)
+  .command(defaultCommand)
+  .help()
+  .argv;
 
