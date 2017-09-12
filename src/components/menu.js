@@ -53,6 +53,7 @@ export default function (libInstance) {
             promise = actions.scan(libInstance);
             break;
           case 'List movies':
+            promise = actions.listMovies(libInstance);
             break;
           case 'List tv-series':
             break;
