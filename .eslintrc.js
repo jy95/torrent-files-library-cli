@@ -7,7 +7,6 @@ module.exports = {
         "import/extensions": ['off', 'never'],
         "no-bitwise": ["error", { "allow": ["|"] }],
         "no-restricted-syntax": ['off', "ForInStatement"],
-        "prefer-const" : "off",
         "no-console" : "off"
     },
     "env" : {

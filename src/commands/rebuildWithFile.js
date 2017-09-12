@@ -24,7 +24,7 @@ export default {
     ));
 
     // lib instance
-    let libInstance = TorrentLibrary.createFromJSON(json);
+    const libInstance = TorrentLibrary.createFromJSON(json);
 
     // handle events provided by libInstance
     eventHandler(libInstance);

@@ -11,7 +11,7 @@ const questions = [
     name: 'action',
     message: 'What would like to do ?',
     choices: [
-      'Add new folder to be scanned',
+      'Add new folders to be scanned',
       'Scan paths',
       'List movies',
       'List tv-series',
@@ -46,7 +46,7 @@ export default function (libInstance) {
       .then((answers) => {
         let promise;
         switch (answers.action) {
-          case 'Add new folder to be scanned':
+          case 'Add new folders to be scanned':
             promise = actions.addNewPaths(libInstance);
             break;
           case 'Scan paths':
@@ -56,6 +56,7 @@ export default function (libInstance) {
             promise = actions.listMovies(libInstance);
             break;
           case 'List tv-series':
+            promise = actions.listShows(libInstance);
             break;
           case 'Save result as JSON':
             break;

@@ -43,7 +43,7 @@ export default async function addNewPaths(libInstance) {
   }
 
   async function getPaths() {
-    let promise = await new Promise((resolve) => {
+    const promise = await new Promise((resolve) => {
       promptAddPaths()
         .then((answer) => {
           paths = [...paths, answer.from];

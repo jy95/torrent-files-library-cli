@@ -16,7 +16,7 @@ export default {
     clear();
 
     // lib instance
-    let libInstance = new TorrentLibrary();
+    const libInstance = new TorrentLibrary();
 
     // handle events provided by libInstance
     eventHandler(libInstance);
