@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import * as inquirer from 'inquirer';
 import * as actions from './actions';
+import eventHandler from './eventHandler';
 
 const { log } = console;
 
@@ -10,35 +11,46 @@ const questions = [
     name: 'action',
     message: 'What would like to do ?',
     choices: [
-      'Add new paths to be scanned',
+      'Add new folder to be scanned',
       'Scan paths',
       'List movies',
       'List tv-series',
       'Save result as JSON',
       'Other exit',
     ],
-    default: 5,
+    default: 0,
 
   },
   {
     type: 'confirm',
     name: 'anythingElse',
-    message: 'Do you wish to do anything else',
+    message: 'Do you wish to do anything else ?',
     default: false,
   },
 ];
 
 export default function (libInstance) {
+  function again(callback) {
+    inquirer.prompt(questions[1]).then((confirm) => {
+      if (!confirm.anythingElse) {
+        log(chalk.red("'No' detected! Good bye!\n"));
+        process.exit();
+      }
+      callback();
+    });
+  }
+
   function menu() {
     log('\n');
     inquirer.prompt(questions[0])
       .then((answers) => {
+        let promise;
         switch (answers.action) {
-          case 'Add new paths to be scanned':
-            actions.addNewPaths(libInstance);
+          case 'Add new folder to be scanned':
+            promise = actions.addNewPaths(libInstance);
             break;
           case 'Scan paths':
-            actions.scan(libInstance);
+            promise = actions.scan(libInstance);
             break;
           case 'List movies':
             break;
@@ -50,15 +62,13 @@ export default function (libInstance) {
             log(chalk.red('End of program'));
             process.exit();
         }
-        inquirer.prompt(questions[1]).then((confirm) => {
-          if (!confirm.anythingElse) {
-            log(chalk.red("'No' detected! Good bye!\n"));
-            process.exit();
-          }
-          menu();
-        });
+        return promise;
+      }).then(() => {
+        again(menu);
       });
   }
+  // handle events provided by libInstance
+  eventHandler(libInstance);
 
   menu();
 }

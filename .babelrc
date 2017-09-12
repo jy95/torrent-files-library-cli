@@ -1,6 +1,3 @@
 {
-  "presets": ["env"],
-  "ignore": [
-    "src/jsdoc/*.js"
-  ]
+  "presets": ["env"]
 }

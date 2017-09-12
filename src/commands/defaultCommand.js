@@ -12,9 +12,6 @@ const { log } = console;
 export default {
   command: '*',
   describe: 'The default command, without JSON file',
-  builder: {
-
-  },
   handler() {
     clear();
 

@@ -4,7 +4,7 @@
 import chalk from 'chalk';
 import { rebuildWithFile, defaultCommand } from './commands';
 
-const { log } = console;
+const { log, error } = console;
 
 // for exits
 process.on('SIGINT', () => {
@@ -13,7 +13,7 @@ process.on('SIGINT', () => {
 });
 
 process.on('uncaughtException', (err) => {
-  log(chalk.yellow(`Error detected : ${err.message}`));
+  error(chalk.yellow(`Error detected : ${err.message}`));
   process.exit();
 });
 
