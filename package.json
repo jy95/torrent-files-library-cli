@@ -72,7 +72,7 @@
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
-    "semantic-release": "^7.0.2",
+    "semantic-release": "^8.0.3",
     "sr-commit-analyzer": "^2.0.2",
     "sr-release-notes-generator": "^1.1.2"
   },
@@ -91,6 +91,6 @@
     "inquirer-select-directory": "^1.1.2",
     "promise-reporter": "^0.1.4",
     "torrent-files-library": "^1.2.1",
-    "yargs": "^8.0.2"
+    "yargs": "^9.0.1"
   }
 }
