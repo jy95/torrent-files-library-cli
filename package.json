@@ -91,6 +91,6 @@
     "inquirer-select-directory": "^1.1.2",
     "promise-reporter": "^0.1.4",
     "torrent-files-library": "^1.2.1",
-    "yargs": "^9.0.1"
+    "yargs": "^10.0.3"
   }
 }
