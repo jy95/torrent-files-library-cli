@@ -31,38 +31,6 @@
     "parse torrent name",
     "torrent library"
   ],
-  "release": {
-    "analyzeCommits": {
-      "path": "sr-commit-analyzer",
-      "preset": "eslint",
-      "releaseRules": [
-        {
-          "tag": "Feat",
-          "release": "minor"
-        },
-        {
-          "tag": "Refactor",
-          "release": "patch"
-        },
-        {
-          "tag": "Fix",
-          "release": "patch"
-        },
-        {
-          "tag": "Perf",
-          "release": "patch"
-        },
-        {
-          "tag": "Breaking",
-          "release": "major"
-        }
-      ]
-    },
-    "generateNotes": {
-      "path": "sr-release-notes-generator",
-      "preset": "eslint"
-    }
-  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
