@@ -31,12 +31,44 @@
     "parse torrent name",
     "torrent library"
   ],
+  "release": {
+    "analyzeCommits": {
+      "path": "sr-commit-analyzer",
+      "preset": "eslint",
+      "releaseRules": [
+        {
+          "tag": "Feat",
+          "release": "minor"
+        },
+        {
+          "tag": "Refactor",
+          "release": "patch"
+        },
+        {
+          "tag": "Fix",
+          "release": "patch"
+        },
+        {
+          "tag": "Perf",
+          "release": "patch"
+        },
+        {
+          "tag": "Breaking",
+          "release": "major"
+        }
+      ]
+    },
+    "generateNotes": {
+      "path": "sr-release-notes-generator",
+      "preset": "eslint"
+    }
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-register": "^6.26.0",
-    "conventional-changelog-eslint": "^0.2.0",
+    "conventional-changelog-eslint": "^0.3.0",
     "eslint": "^4.5.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
@@ -53,10 +85,10 @@
     "chalk": "^2.1.0",
     "clear-terminal": "0.0.2",
     "figlet": "^1.2.0",
-    "inquirer": "^3.2.3",
+    "inquirer": "^4.0.1",
     "inquirer-select-directory": "^1.1.2",
     "promise-reporter": "^0.1.4",
     "torrent-files-library": "^1.2.1",
-    "yargs": "^8.0.2"
+    "yargs": "^10.0.3"
   }
 }
