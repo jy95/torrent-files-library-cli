@@ -59,6 +59,7 @@ export default function (libInstance) {
             promise = actions.listShows(libInstance);
             break;
           case 'Save result as JSON':
+            promise = actions.writeJSON(libInstance);
             break;
           default:
             log(chalk.red('End of program'));

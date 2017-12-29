@@ -35,7 +35,7 @@
       "description": "Bug fix"
     },
     {
-      "emoji": ":zapr:",
+      "emoji": ":zap:",
       "type": "Perf:",
       "description": "Code change that improves performance"
     },
