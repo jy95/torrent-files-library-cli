@@ -12,8 +12,9 @@
   "scripts": {
     "semantic-release": "semantic-release -e ./config/release.config.js",
     "compile": "babel -d lib/ src/ --source-maps both",
-    "prepare": "npm run compile",
-    "lint": "./node_modules/.bin/eslint -c config/.eslintrc.js ./src ./test --fix"
+    "prepare": "npm run snyk-protect; npm run compile",
+    "lint": "./node_modules/.bin/eslint -c config/.eslintrc.js ./src ./test --fix",
+    "snyk-protect": "snyk protect"
   },
   "engines": {
     "node": ">=6",
@@ -57,6 +58,8 @@
     "inquirer-select-directory": "^1.1.2",
     "promise-reporter": "^0.1.4",
     "torrent-files-library": "^1.2.1",
-    "yargs": "^13.1.0"
-  }
+    "yargs": "^13.1.0",
+    "snyk": "^1.171.1"
+  },
+  "snyk": true
 }
