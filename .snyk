@@ -13,3 +13,24 @@ patch:
         patched: '2019-06-05T10:22:26.995Z'
     - torrent-files-library > filehound > unit-compare > moment:
         patched: '2019-06-05T10:22:26.995Z'
+  SNYK-JS-LODASH-450202:
+    - snyk > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > snyk-php-plugin > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-06T05:36:21.210Z'
