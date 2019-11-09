@@ -51,7 +51,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "chalk": "^2.1.0",
+    "chalk": "^3.0.0",
     "clear-terminal": "0.0.2",
     "figlet": "^1.2.0",
     "inquirer": "^7.0.0",
