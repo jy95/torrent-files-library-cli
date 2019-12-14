@@ -59,7 +59,7 @@
     "promise-reporter": "^0.1.4",
     "torrent-files-library": "^1.2.1",
     "yargs": "^14.0.0",
-    "snyk": "^1.231.0"
+    "snyk": "^1.260.0"
   },
   "snyk": true
 }
